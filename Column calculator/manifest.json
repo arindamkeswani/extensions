@@ -1,0 +1,25 @@
+{
+    "manifest_version": 3,
+   
+    "name": "Google Sheets Column Index Calculator",
+    "version": "0.1.1",
+    "description": "Input column name, output column number (1-indexed), column index (0-index). Useful for Apps Script development. Clicking on a column will have the same effect.",
+    "browser_action":{
+      "default_icon":"google-sheets.png"
+    },
+    "icons":{
+      "128":"google-sheets.png"
+    },
+    "permissions": [
+      "activeTab",
+      "scripting"
+    ],
+    "host_permissions": [
+      "https://docs.google.com/spreadsheets/*"
+    ],
+    "content_scripts": [{
+      "js": ["content.js"],
+      "matches": ["https://docs.google.com/spreadsheets/*"]
+    }]
+   
+  }
